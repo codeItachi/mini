@@ -129,19 +129,27 @@ var t2=setInterval(move,2000);
 //选项卡
 
 
-    $(".chose").each(function(i,obj1){
-        $(this).eq(i).find(".title-word2").each(function(j,obj2){
-                var index2=$(obj2).index();
-                $(obj2).hover(function(){
+    // $(".chose").each(function(i,obj1){
+    //     $(this).eq(i).find(".title-word2").each(function(j,obj2){
+    //             var index2=$(obj2).index();
+    //             $(obj2).hover(function(){
            
-                    $(".too").hide();
-                    $(".too").eq(index2).css("display","block");
-                    $(obj1).eq(j).find(".title-word2").css({color:"#424242",borderBottom:"none"})
-                    $(obj1).eq(index2).find(".title-word2").css({borderBottom:"2px solid #ff6700",color:"#ff6700"})
-          },function(){})
-        })
-    })
+    //                 $(".too").hide();
+    //                 $(".too").eq(index2).css("display","block");
+    //                 $(obj1).eq(j).find(".title-word2").css({color:"#424242",borderBottom:"none"})
+    //                 $(obj1).eq(index2).find(".title-word2").css({borderBottom:"2px solid #ff6700",color:"#ff6700"})
+    //       },function(){})
+    //     })
+    // })
+
    
+$('.choose').children().each(function(i,v){
+    $(this).hover(function(){
+      var that=this;
+      $('.hua').hide();
+    $(that).css({borderBottom:"2px solid #ff6700",color:"#ff6700"});
+    $('.hua').eq(i).css('display','block')
+},function(){$(this).css({borderBottom:"none",color:'#000'})})
 
-
+})
 })
